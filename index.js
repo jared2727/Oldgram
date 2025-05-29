@@ -27,43 +27,29 @@ const posts = [
         likes: 152
     }
 ]
-
-
-
-
+// let all DOM elements load before editing
 document.addEventListener("DOMContentLoaded", (event) => {
-let clicked = false;
     function renderPage() {
+        // grab DOM element to populate html within
         const main = document.querySelector("main");
+
+        // iterate through the posts array
         posts.forEach((post, index) => {
+
+            // initialize current values and string
             let likesVal = +post.likes;
             let likesString = "";
             
+
+            // if likes are equal to one, make it singular, otherwise plural
             if (likesVal === 1) {
                 likesString = `${likesVal} like`;
                 
             } else {
                 likesString = `${likesVal} likes`;
             }
-            
-        
-            
-            console.log(likesString)
-           
-            // const commentIcon = document.querySelector(".icon-comment");
-            // const dmIcon = document.querySelector(".icon-dm");
-            // const likesEl = document.querySelector(".likes");
-            // const postImgEl = document.querySelector(".post-img");
-            
-            
-            posts[index].likes = likesVal;
-            
-            // if (likesVal === 1) {
-            //         likesEl.textContent = `"${likesString}"`;
-            //     } else {
-            //         likesEl.textContent = `"${likesString}"`;
-            //     }
-                
+              
+            // apply interated values of post and index to the string literals    
             main.innerHTML +=
             `
             <main>
@@ -86,16 +72,20 @@ let clicked = false;
                 </section>
             </main>
             ` 
-    }
-    )
+            })
+
+            // iterate through the posts array after the page is rendered to grab the newly created DOM elements
             posts.forEach((post, index) => {
                 let likesVal = +post.likes;
                 let likesString = "";
                 
+                // DOM element selection
                 const heartIcon = document.querySelector(`#heart-${index}`);
                 const postImgEl = document.querySelector(`#post-img-${index}`);
                 const likesEl = document.querySelector(`#likes-${index}`);
                 
+
+                // if heart icon is double clicked, call toggleLike function to update like value and apply to DOM element
                 heartIcon.addEventListener("click", () => {
                     toggleLike();
                     if (likesVal === 1) {
@@ -106,6 +96,7 @@ let clicked = false;
                 likesEl.textContent = likesString
                 })
                 
+                // if post image is clicked, call toggleLike function to update like value and apply to DOM element
                 postImgEl.addEventListener("dblclick", () => {
                     toggleLike();
                     if (likesVal === 1) {
@@ -116,7 +107,8 @@ let clicked = false;
                 likesEl.textContent = likesString
                 })
                 
-                
+                // function to increase or decrease likes based on click
+                // includes code to toggle fill for the heart svg
                 function toggleLike() {
                     if (heartIcon.classList.contains("icon-heart-fill")) {
                         likesVal -= 1;
@@ -132,10 +124,9 @@ let clicked = false;
                         return likesVal
                     }
                 }
-            })      
-
+            }
+        )     
 }
+// call the render function
 renderPage()
-
-
 });

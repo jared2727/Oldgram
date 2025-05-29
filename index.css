@@ -1,27 +1,31 @@
-html, body {
+body {
     font-family: "Source Sans 3", sans-serif;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 0;
     font-size: 12px;
     width: 400px;
-    border: 1px solid grey;
+    border: 2px solid grey;
     border-radius: 10px;
 }
 
+/* Page layout */
 header {
     display: flex;
     justify-content: space-between;
     padding: 0 1.25rem;
 }
 
-.container {
-    width: 31.25rem;
-}
-
 .logo {
     width: 8rem;
 }
 
+.container {
+    width: 31.25rem;
+}
+
+
+
+/* user sections */
 .acnt-user {
     display: flex;
     flex-direction: row;
@@ -51,11 +55,10 @@ header {
     padding: 5px 0;
 }
 
-.post-img {
-    width: 100%;
-    padding-bottom: 0;
-}
 
+
+
+/* Icons */
 .icon-container {
     display: flex;
     align-items: flex-start;
@@ -75,7 +78,7 @@ header {
 .heart:focus,
 .icon-dm:focus,
 .icon-comment:focus {
-    transform: scale(1.1, 1.1);
+    transform: scale(1.2, 1.2);
 }
 
 .icon-container img {
@@ -103,6 +106,13 @@ header {
 }
 
 
+/* post info section & comments */
+.post-img {
+    width: 100%;
+    padding-bottom: 0;
+    cursor: pointer;
+}
+
 .likes {
     margin: 0.5rem .75rem;
     font-weight: bold;
@@ -115,5 +125,5 @@ header {
 .caption {
     font-weight: normal;
     /* margin: 0.5rem .75rem; */
-    padding: 0 0 0.5rem .75rem;
+    padding: 0 0 0 .75rem;
 }

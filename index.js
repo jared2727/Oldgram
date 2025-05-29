@@ -114,13 +114,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         likesVal -= 1;
                         heartIcon.classList.remove("icon-heart-fill");
                         heartIcon.classList.add("icon-heart-nofill");
-                        console.log(likesVal)
                         return likesVal
                     } else {
                         likesVal += 1;
                         heartIcon.classList.remove("icon-heart-nofill");
                         heartIcon.classList.add("icon-heart-fill");
-                        console.log(likesVal)
                         return likesVal
                     }
                 }

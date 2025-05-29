@@ -63,9 +63,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 <section class="post">
                     <img id="post-img-${index}" class="post-img" src=${post.post}>
                     <div class="icon-container">
-                        <p id="heart-${index}" class="heart icon-heart-nofill material-symbols-outlined" src="/images/icon-heart.png">favorite</p>
-                        <img class="icon-comment" src="/images/icon-comment.png">
-                        <img class="icon-dm" src="/images/icon-dm.png">
+                        <p id="heart-${index}" class="heart icon-heart-nofill material-symbols-outlined" src="./images/icon-heart.png">favorite</p>
+                        <img class="icon-comment" src="./images/icon-comment.png">
+                        <img class="icon-dm" src="./images/icon-dm.png">
                     </div>
                     <p id="likes-${index}" class="likes">${likesString}</p>
                     <p class="caption"><span class="user">gus1819</span> ${post.comment}</p>

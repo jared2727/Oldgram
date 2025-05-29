@@ -1,8 +1,11 @@
-body {
+html {
     font-family: "Source Sans 3", sans-serif;
+    font-size: 16px;
+}
+
+body {
     margin: 2rem auto;
     padding: 0;
-    font-size: 12px;
     width: 400px;
     border: 2px solid grey;
     border-radius: 10px;
@@ -12,7 +15,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    padding: 0 1.25rem;
+    padding: 0.5rem 1.25rem;
 }
 
 .logo {
@@ -31,7 +34,7 @@ header {
     flex-direction: row;
     justify-content: start;
     align-items: center;
-    padding: 1.5rem 1rem 0 1rem;
+    padding: 1rem 1rem 0 1rem;
     border-top: 2px solid lightgray;
 }
 
@@ -63,7 +66,7 @@ header {
     display: flex;
     align-items: flex-start;
     user-select: none;
-    height: 2.75rem;
+    height: 2rem;
 }
 
 .heart {

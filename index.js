@@ -31,10 +31,14 @@ const posts = [
 
 
 
-let clicked = false;
 document.addEventListener("DOMContentLoaded", (event) => {
+    let clicked = false; 
+    renderPage();
+    const heartIcon = document.querySelector(`"#heart-${posts.indexOf(post)}"`);
+    function renderPage() {
+        
         for (let post of posts) {
-            const heartIcon = document.querySelectorAll("#heart");
+            console.log(posts.indexOf(post));
             let likesVal = +post.likes;
             // const commentIcon = document.querySelector(".icon-comment");
             // const dmIcon = document.querySelector(".icon-dm");
@@ -47,7 +51,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 } else {
                     likesVal = `${+post.likes} likes`;
                 }
-                console.log(likesVal)
             main.innerHTML +=
             `
             <main>
@@ -61,7 +64,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 <section class="post">
                     <img class="post-img" src=./${post.post}>
                     <div class="icon-container">
-                        <p id="heart" class="icon-heart-nofill material-symbols-outlined" alt="like icon">favorite</p>
+                        <p id="heart-${posts.indexOf(post)}" class="icon-heart-nofill material-symbols-outlined" alt="like icon">favorite</p>
                         <img class="icon-comment" src="./images/icon-comment.png" alt="comment icon">
                         <img class="icon-dm" src="./images/icon-dm.png" alt="direct message icon">
                     </div>
@@ -70,34 +73,35 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 </section>
             </main>
             `
-    heartIcon.forEach( (e) => {
-        e.addEventListener("click", () => {
-                toggleLike();
-                clicked = true;
-                console.log(clicked)
-            })
-    })
-    
-        // postImgEl.addEventListener("dblclick", () => {
-        //     toggleLike();
-        //     if (post.likes === 1) {
-        //         likesVal = `${post.likes} like`;
-        //     } else {
-        //         likesVal = `${post.likes} likes`;
-        //     }  
-        // })
-    function toggleLike() {
-            if (heartIcon.classList.contains("icon-heart-fill")) {
-                post.likes -= 1;
-                heartIcon.classList.toggle("icon-heart-fill");
-            } else {
-                post.likes += 1;
-                heartIcon.classList.toggle("icon-heart-fill");  
-            }
             
         }
-            
-}
+        
+        
+        // postImgEl.addEventListener("dblclick", () => {
+            //     toggleLike();
+            //     if (post.likes === 1) {
+                //         likesVal = `${post.likes} like`;
+                //     } else {
+                    //         likesVal = `${post.likes} likes`;
+                    //     }  
+                    // })
+                    function toggleLike() {
+                        if (heartIcon.classList.contains("icon-heart-fill")) {
+                            post.likes -= 1;
+                            heartIcon.classList.toggle("icon-heart-fill");
+                        } else {
+                            post.likes += 1;
+                            heartIcon.classList.toggle("icon-heart-fill");  
+                        }
+                        
+                    }
+                    
+                }
+                heartIcon.addEventListener("click", () => {
+                        toggleLike();
+                        clicked = true;
+                        console.log(clicked)
+                    })
 
 
 });

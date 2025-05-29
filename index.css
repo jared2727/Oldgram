@@ -63,20 +63,19 @@ header {
     height: 2.75rem;
 }
 
-#heart {
+.heart {
     margin-top: 0.25rem;
     margin-left: 0.5rem;
     user-select: none;
 }
 
-#heart:hover,
+.heart:hover,
 .icon-dm:hover,
 .icon-comment:hover,
-#heart:focus,
+.heart:focus,
 .icon-dm:focus,
 .icon-comment:focus {
     transform: scale(1.1, 1.1);
-    transition: all 0.1s ease;
 }
 
 .icon-container img {
@@ -89,6 +88,7 @@ header {
 .icon-heart-nofill {
     color: #3d3d3d;
     cursor: pointer;
+    transition: all 0.1s ease;
     font-variation-settings:
         'FILL' 0 
     
@@ -97,6 +97,7 @@ header {
 .icon-heart-fill {
     color: red;
     cursor: pointer;
+    transition: all 0.1s ease;
     font-variation-settings:
         'FILL' 1 
 }
@@ -114,5 +115,5 @@ header {
 .caption {
     font-weight: normal;
     /* margin: 0.5rem .75rem; */
-    padding: 0rem .75rem;
+    padding: 0 0 0.5rem .75rem;
 }

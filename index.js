@@ -32,76 +32,110 @@ const posts = [
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    let clicked = false; 
-    renderPage();
-    const heartIcon = document.querySelector(`"#heart-${posts.indexOf(post)}"`);
+let clicked = false;
     function renderPage() {
-        
-        for (let post of posts) {
-            console.log(posts.indexOf(post));
+        const main = document.querySelector("main");
+        posts.forEach((post, index) => {
             let likesVal = +post.likes;
+            let likesString = "";
+            
+            if (likesVal === 1) {
+                likesString = `${likesVal} like`;
+                
+            } else {
+                likesString = `${likesVal} likes`;
+            }
+            
+        
+            
+            console.log(likesString)
+           
             // const commentIcon = document.querySelector(".icon-comment");
             // const dmIcon = document.querySelector(".icon-dm");
             // const likesEl = document.querySelector(".likes");
             // const postImgEl = document.querySelector(".post-img");
-            const main = document.querySelector("main");
             
-            if (post.likes === 1) {
-                    likesVal = `${+post.likes} like`;
-                } else {
-                    likesVal = `${+post.likes} likes`;
-                }
+            
+            posts[index].likes = likesVal;
+            
+            // if (likesVal === 1) {
+            //         likesEl.textContent = `"${likesString}"`;
+            //     } else {
+            //         likesEl.textContent = `"${likesString}"`;
+            //     }
+                
             main.innerHTML +=
             `
             <main>
                 <section class="acnt-user">
-                    <img class="avatar acnt-avatar" src=./${post.avatar}>
+                    <img class="avatar acnt-avatar" src=${post.avatar}>
                     <div class="acnt-info">
                         <h2>${post.name}</h2>
                         <h3>${post.location}</h3>
                     </div>
                 </section>
                 <section class="post">
-                    <img class="post-img" src=./${post.post}>
+                    <img id="post-img-${index}" class="post-img" src=${post.post}>
                     <div class="icon-container">
-                        <p id="heart-${posts.indexOf(post)}" class="icon-heart-nofill material-symbols-outlined" alt="like icon">favorite</p>
-                        <img class="icon-comment" src="./images/icon-comment.png" alt="comment icon">
-                        <img class="icon-dm" src="./images/icon-dm.png" alt="direct message icon">
+                        <p id="heart-${index}" class="heart icon-heart-nofill material-symbols-outlined" src="/images/icon-heart.png">favorite</p>
+                        <img class="icon-comment" src="/images/icon-comment.png">
+                        <img class="icon-dm" src="/images/icon-dm.png">
                     </div>
-                    <p class="likes">${likesVal}</p>
+                    <p id="likes-${index}" class="likes">${likesString}</p>
                     <p class="caption"><span class="user">gus1819</span> ${post.comment}</p>
                 </section>
             </main>
-            `
-            
-        }
-        
-        
-        // postImgEl.addEventListener("dblclick", () => {
-            //     toggleLike();
-            //     if (post.likes === 1) {
-                //         likesVal = `${post.likes} like`;
-                //     } else {
-                    //         likesVal = `${post.likes} likes`;
-                    //     }  
-                    // })
-                    function toggleLike() {
-                        if (heartIcon.classList.contains("icon-heart-fill")) {
-                            post.likes -= 1;
-                            heartIcon.classList.toggle("icon-heart-fill");
-                        } else {
-                            post.likes += 1;
-                            heartIcon.classList.toggle("icon-heart-fill");  
-                        }
-                        
-                    }
-                    
-                }
+            ` 
+    }
+    )
+            posts.forEach((post, index) => {
+                let likesVal = +post.likes;
+                let likesString = "";
+                
+                const heartIcon = document.querySelector(`#heart-${index}`);
+                const postImgEl = document.querySelector(`#post-img-${index}`);
+                const likesEl = document.querySelector(`#likes-${index}`);
+                
                 heartIcon.addEventListener("click", () => {
-                        toggleLike();
-                        clicked = true;
-                        console.log(clicked)
-                    })
+                    toggleLike();
+                    if (likesVal === 1) {
+                        likesString = `${likesVal} like`;
+                    } else {
+                        likesString = `${likesVal} likes`;
+                    }
+                likesEl.textContent = likesString
+                })
+                
+                postImgEl.addEventListener("dblclick", () => {
+                    toggleLike();
+                    if (likesVal === 1) {
+                        likesString = `${likesVal} like`;
+                    } else {
+                        likesString = `${likesVal} likes`;
+                    }
+                likesEl.textContent = likesString
+                })
+                
+                
+                function toggleLike() {
+                    if (heartIcon.classList.contains("icon-heart-fill")) {
+                        likesVal -= 1;
+                        heartIcon.classList.remove("icon-heart-fill");
+                        heartIcon.classList.add("icon-heart-nofill");
+                        console.log(likesVal)
+                        return likesVal
+                    } else {
+                        likesVal += 1;
+                        heartIcon.classList.remove("icon-heart-nofill");
+                        heartIcon.classList.add("icon-heart-fill");
+                        console.log(likesVal)
+                        return likesVal
+                    }
+                }
+            })      
+
+}
+renderPage()
 
 
 });

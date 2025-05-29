@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             `
             <main>
                 <section class="acnt-user">
-                    <img class="avatar acnt-avatar" src=${post.avatar}>
+                    <img class="avatar acnt-avatar" src=./${post.avatar}>
                     <div class="acnt-info">
                         <h2>${post.name}</h2>
                         <h3>${post.location}</h3>

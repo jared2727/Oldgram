@@ -34,7 +34,7 @@ const posts = [
 let clicked = false;
 document.addEventListener("DOMContentLoaded", (event) => {
         for (let post of posts) {
-        const heartIcon = document.querySelectorAll("#heart");
+            const heartIcon = document.querySelectorAll("#heart");
             let likesVal = +post.likes;
             // const commentIcon = document.querySelector(".icon-comment");
             // const dmIcon = document.querySelector(".icon-dm");
@@ -72,10 +72,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
             `
     heartIcon.forEach( (e) => {
         e.addEventListener("click", () => {
-            toggleLike();
-            clicked = true;
-            console.log(clicked)
-        })
+                toggleLike();
+                clicked = true;
+                console.log(clicked)
+            })
     })
     
         // postImgEl.addEventListener("dblclick", () => {

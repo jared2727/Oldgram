@@ -1,0 +1,117 @@
+html, body {
+    font-family: "Source Sans 3", sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 12px;
+    width: 400px;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.25rem;
+}
+
+.container {
+    width: 31.25rem;
+}
+
+.logo {
+    width: 8rem;
+}
+
+.acnt-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 1.5rem 1rem 0 1rem;
+    border-top: 2px solid lightgray;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    /* margin-top: 1rem; */
+    margin: 10px 0 10px 10px;
+}
+
+.acnt-avatar {
+    margin: 0 5px 0 0;
+}
+
+.acnt-info {
+    display: flex;
+    flex-direction: column;
+    line-height: .1rem;
+    font-size: 0.75rem;
+    padding: 5px 0;
+}
+
+.post-img {
+    width: 100%;
+    padding-bottom: 0;
+}
+
+.icon-container {
+    display: flex;
+    align-items: flex-start;
+    user-select: none;
+    height: 2.75rem;
+}
+
+#heart {
+    margin-top: 0.25rem;
+    margin-left: 0.5rem;
+    user-select: none;
+}
+
+#heart:hover,
+.icon-dm:hover,
+.icon-comment:hover,
+#heart:focus,
+.icon-dm:focus,
+.icon-comment:focus {
+    transform: scale(0.9, 0.9);
+}
+
+.icon-container img {
+    width: 5.5%;  
+    margin: 0.25rem;
+    padding: 0.1rem;
+    cursor: pointer;
+}
+
+.icon-heart-nofill {
+    color: #3d3d3d;
+    cursor: pointer;
+    font-variation-settings:
+        'FILL' 0 
+    
+}
+
+.icon-heart-fill {
+    color: red;
+    cursor: pointer;
+    font-variation-settings:
+        'FILL' 1 
+}
+
+
+.likes {
+    margin: 0.5rem .75rem;
+    font-weight: bold;
+}
+
+.user {
+    font-weight: bold;
+}
+
+.caption {
+    font-weight: normal;
+    /* margin: 0.5rem .75rem; */
+    padding: 0rem .75rem;
+}

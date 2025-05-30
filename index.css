@@ -125,7 +125,6 @@ header {
     padding-bottom: 0;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
-    touch-action: none;
 }
 
 .likes {

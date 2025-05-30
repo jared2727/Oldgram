@@ -17,6 +17,7 @@ textarea,
 button,
 select,
 img,
+#heart,
 a {
     -webkit-tap-highlight-color: transparent;
 }

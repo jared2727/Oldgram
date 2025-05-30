@@ -3,8 +3,8 @@ const posts = [
         name: "Vincent van Gogh",
         username: "vincey1853",
         location: "Zundert, Netherlands",
-        avatar: "images/avatar-vangogh.jpg",
-        post: "images/post-vangogh.jpg",
+        avatar: "./images/avatar-vangogh.jpg",
+        post: "./images/post-vangogh.jpg",
         comment: "just took a few mushrooms lol",
         likes: 21
     },
@@ -12,12 +12,12 @@ const posts = [
         name: "Gustave Courbet",
         username: "gus1819",
         location: "Ornans, France",
-        avatar: "images/avatar-courbet.jpg",
-        post: "images/post-courbet.jpg",
+        avatar: "./images/avatar-courbet.jpg",
+        post: "./images/post-courbet.jpg",
         comment: "i'm feelin a bit stressed tbh",
         likes: 4
     },
-        {
+    {
         name: "Joseph Ducreux",
         username: "jd1735",
         location: "Paris, France",
@@ -63,9 +63,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 <section class="post">
                     <img id="post-img-${index}" class="post-img" src=${post.post}>
                     <div class="icon-container">
-                        <p id="heart-${index}" class="heart icon-heart-nofill material-symbols-outlined" src="./images/icon-heart.png">favorite</p>
-                        <img class="icon-comment" src="./images/icon-comment.png">
-                        <img class="icon-dm" src="./images/icon-dm.png">
+                        <p id="heart-${index}" class="heart icon-heart-nofill material-symbols-outlined" src="/images/icon-heart.png">favorite</p>
+                        <img class="icon-comment" src="/images/icon-comment.png">
+                        <img class="icon-dm" src="/images/icon-dm.png">
                     </div>
                     <p id="likes-${index}" class="likes">${likesString}</p>
                     <p class="caption"><span class="user">gus1819</span> ${post.comment}</p>

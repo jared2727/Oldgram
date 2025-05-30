@@ -11,6 +11,16 @@ body {
     border-radius: 10px;
 }
 
+/* remove blue overlay on mobile touch */
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
 /* Page layout */
 header {
     display: flex;

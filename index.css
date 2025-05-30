@@ -16,6 +16,7 @@ input,
 textarea,
 button,
 select,
+img,
 a {
     -webkit-tap-highlight-color: transparent;
 }
@@ -102,7 +103,7 @@ header {
 }
 
 .icon-heart-nofill {
-    color: #3d3d3d;
+    color: black;
     cursor: pointer;
     transition: all 0.1s ease;
     font-variation-settings:
